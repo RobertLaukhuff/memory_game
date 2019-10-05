@@ -8,7 +8,10 @@ class MemoryGame
   end
 
   def play
-    
+    while !game_over?
+
+    end
+
   end
 
   def game_over?

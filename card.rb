@@ -1,22 +1,20 @@
-def Card
-  def initialize(is_facedown?, name)
-    @is_facedown? = is_facedown?
-    @name
+class Card
+  attr_reader :name, :is_facedown
+
+  def initialize(name)
+    @is_facedown = true
+    @name = name
   end
 
   def hide
-
+    @is_facedown = true
   end
 
   def reveal
-
+    @is_facedown = false
   end
 
-  def to_s
-
-  end
-
-  def ==
-    
+  def ==(other_card)
+    self.name == other_card.name
   end
 end
