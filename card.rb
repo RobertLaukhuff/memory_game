@@ -6,11 +6,11 @@ class Card
     @name = name
   end
 
-  def hide
+  def hide_card
     @is_facedown = true
   end
 
-  def reveal
+  def show_card
     @is_facedown = false
   end
 
