@@ -4,10 +4,12 @@ class Board
   ALPHABET = ("A".."Z").to_a
 
   attr_reader :cards, :board
+  attr_accessor :matches
 
   def initialize(board_size)
     @board = Array.new(board_size) {Array.new(board_size, ' ')}
     @cards = Array.new(board_size * board_size)
+    @matches = 0
   end
 
   def make_cards
@@ -52,7 +54,7 @@ class Board
   end
 
   def won?
-    @board.each.all? {|card| card == ' '}
+    @matches == (@board.length * @board.length) / 2
   end
 
   def reveal(guessed_position)
@@ -69,20 +71,20 @@ class Board
   end
 end
 
-b = Board.new(4)
-b.make_cards
-b.populate
-print "\nprint board\n\n"
-b.render
-b.reveal([0, 0])
-b.reveal([1, 1])
-print "\nprint board\n\n"
-b.render
-b.reveal([1, 2])
-b.reveal([0, 3])
-print "\nprint board\n\n"
-b.render
-b.hide
-print "\nprint board\n\n"
-b.render
-print "#{b.won?}"
+# b = Board.new(4)
+# b.make_cards
+# b.populate
+# print "\nprint board\n\n"
+# b.render
+# b.reveal([0, 0])
+# b.reveal([1, 1])
+# print "\nprint board\n\n"
+# b.render
+# b.reveal([1, 2])
+# b.reveal([0, 3])
+# print "\nprint board\n\n"
+# b.render
+# b.hide
+# print "\nprint board\n\n"
+# b.render
+# print "#{b.won?}"

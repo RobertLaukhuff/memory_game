@@ -1,9 +1,10 @@
 class Card
-  attr_reader :name, :is_facedown
+  attr_reader :name, :is_facedown, :matched
 
   def initialize(name)
     @is_facedown = true
     @name = name
+    @matched = false
   end
 
   def hide_card
